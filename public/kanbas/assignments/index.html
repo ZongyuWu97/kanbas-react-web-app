@@ -1,245 +1,382 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- <base href = "/public/" /> -->
+  <link href="../../vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../style.css" rel="stylesheet" />
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.css" rel="stylesheet" />
+</head>
+
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../home.html">CS5610 Fall 2023</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Assignments</li>
+  </ol>
+</nav>
+
+
 <table>
-  <tr>
-    <td valign="top">
+  <tr class="d-flex flex-row">
+    <td valign="top" class="list-group navigation-bar">
       <ul>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-regular fa-user cl-gray"></i>
           <a href="../profile/index.html">Account</a>
         </li>
-        <li>
-          <a href="#">Dashbord</a>
+        <li class="list-group-item">
+          <i class="fa-solid fa-gauge"></i>
+          <a href="../dashbord.html">Dashbord</a>
         </li>
-        <li>
+        <li class="list-group-item selected">
+          <i class="fa-solid fa-book"></i>
           <a href="../home.html">Courses</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-regular fa-calendar"></i>
           <a href="#">Calendar</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-inbox"></i>
           <a href="#">Inbox</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-regular fa-clock"></i>
           <a href="#">History</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-computer"></i>
           <a href="#">Studio</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
           <a href="#">Commons</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-question"></i>
           <a href="#">Help</a>
         </li>
       </ul>
     </td>
 
-    <td valign="top">
-      <li>
+
+    <td valign="top" class="list-group account-navigation">
+      <li class="list-group-item">
         <a href="../home.html">Home</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Modules</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Piazza</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Zoom Meetings</a>
       </li>
-      <li>
-        <a href="index.html">Assignments</a>
+      <li class="list-group-item selected">
+        <a href="#">Assignments</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Quizzes</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="../grades.html">Grade</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">People</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Panopto Video</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Discussions</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Announcements</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Pages</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Files</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Rubrics</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Outcomes</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Collaborations</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Syllabus</a>
       </li>
-      <li>
-        <a href="course-detail.html">Settings</a>
+      <li class="list-group-item">
+        <a href="../course-detail.html">Settings</a>
       </li>
 
     </td>
 
-    <td valign="top">
-      <input type="text" placeholder="Search for Assignments">
-      <button>Group</button>
-      <button>Assignment</button>
-      <select>
-        <option selected value="EAD">
-          Edit Assignment Dates</option>
-      </select>
+    <td valign="top" class="flex-grow-1">
+      <div class="d-flex flex-row">
+        <div class="flex-grow-1 w-25">
+          <input type="text" placeholder="Search for Assignments" class="form-control w-50">
+        </div>
+        <button class="float-end">
+          <i class="fa fa-plus float-end" aria-hidden="true"></i>
+          Group</button>
+        <button class="float-end">
+          <i class="fa fa-plus float-end" aria-hidden="true"></i>
+          Assignment</button>
+        <select class="float-end">
+          <option selected value="EAD">
+            Edit Assignment Dates</option>
+        </select>
+
+
+      </div>
 
       <hr>
-      <h2>ASSIENMENTS 40% of Total <select>
-          <option selected value="Edit">
-            Edit</option>
-          <option value="Edit">
-            Speed Grader</option>
-          <option value="Duplicate">
-            Duplicate</option>
-          <option value="Delete">
-            Delete</option>
-          <option value="Move">
-            Move To...</option>
-          <option value="Send">
-            Send To...</option>
-          <option value="Copy">
-            Copy To...</option>
-          <option value="Share">
-            Share to Commons</option>
-        </select></h2>
-      <ul>
-        <li>
-          <a href="edit.html">A1</a><br>
-          <a href="#">Multiple Modules</a> | Not available yet
+
+      <ul class="list-group mb-3 ">
+        <li class="list-group-item-secondary">
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          ASSIENMENTS 40% of Total <select>
+            <option selected value="Edit">
+              Edit</option>
+            <option value="Edit">
+              Speed Grader</option>
+            <option value="Duplicate">
+              Duplicate</option>
+            <option value="Delete">
+              Delete</option>
+            <option value="Move">
+              Move To...</option>
+            <option value="Send">
+              Send To...</option>
+            <option value="Copy">
+              Copy To...</option>
+            <option value="Share">
+              Share to Commons</option>
+          </select>
+          <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+          <i class="fa fa-check-circle float-end" aria-hidden="true" style="color: green;"></i>
         </li>
-        <li>
-          <a href="edit.html">A2</a><br>
+        <li class="list-group-item bdgr">
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa-solid fa-pen-to-square"></i>
+          <a href="edit.html">A1 SETUP</a><br>
           <a href="#">Multiple Modules</a> | Not available yet
+          <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+          <i class="fa fa-check-circle float-end" aria-hidden="true" style="color: green;"></i>
         </li>
-        <li>
-          <a href="edit.html">A3</a><br>
+        <li class="list-group-item bdgr">
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa-solid fa-pen-to-square"></i>
+          <a href="edit.html">A2 HTML</a><br>
           <a href="#">Multiple Modules</a> | Not available yet
+          <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+          <i class="fa fa-check-circle float-end" aria-hidden="true" style="color: green;"></i>
         </li>
-        <li>
-          <a href="edit.html">A4</a><br>
+        <li class="list-group-item bdgr">
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa-solid fa-pen-to-square"></i>
+          <a href="edit.html">A3 CSS</a><br>
           <a href="#">Multiple Modules</a> | Not available yet
+          <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+          <i class="fa fa-check-circle float-end" aria-hidden="true" style="color: green;"></i>
         </li>
-        <li>
-          <a href="edit.html">A5</a><br>
+        <li class="list-group-item bdgr">
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa-solid fa-pen-to-square"></i>
+          <a href="edit.html">A4 BOOTSTRAP</a><br>
           <a href="#">Multiple Modules</a> | Not available yet
+          <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+          <i class="fa fa-check-circle float-end" aria-hidden="true" style="color: green;"></i>
         </li>
-        <li>
-          <a href="edit.html">A6</a><br>
+        <li class="list-group-item bdgr">
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa-solid fa-pen-to-square"></i>
+          <a href="edit.html">A5 JAVASCRIPT</a><br>
           <a href="#">Multiple Modules</a> | Not available yet
+          <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+          <i class="fa fa-check-circle float-end" aria-hidden="true" style="color: green;"></i>
+        </li>
+        <li class="list-group-item bdgr">
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa-solid fa-pen-to-square"></i>
+          <a href="edit.html">A6 REACT</a><br>
+          <a href="#">Multiple Modules</a> | Not available yet
+          <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+          <i class="fa fa-check-circle float-end" aria-hidden="true" style="color: green;"></i>
         </li>
       </ul>
 
-      <h2>QUIZZES 10% of Total <select>
-          <option selected value="Edit">
-            Edit</option>
-          <option value="Edit">
-            Speed Grader</option>
-          <option value="Duplicate">
-            Duplicate</option>
-          <option value="Delete">
-            Delete</option>
-          <option value="Move">
-            Move To...</option>
-          <option value="Send">
-            Send To...</option>
-          <option value="Copy">
-            Copy To...</option>
-          <option value="Share">
-            Share to Commons</option>
-        </select></h2>
-      <ul>
-        <li>
+
+      <ul class="list-group mb-3">
+        <li class="list-group-item-secondary">QUIZZES 10% of Total <select>
+            <option selected value="Edit">
+              Edit</option>
+            <option value="Edit">
+              Speed Grader</option>
+            <option value="Duplicate">
+              Duplicate</option>
+            <option value="Delete">
+              Delete</option>
+            <option value="Move">
+              Move To...</option>
+            <option value="Send">
+              Send To...</option>
+            <option value="Copy">
+              Copy To...</option>
+            <option value="Share">
+              Share to Commons</option>
+          </select>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+          <i class="fa fa-check-circle float-end" aria-hidden="true" style="color: green;"></i>
+        </li>
+        <li class="list-group-item bdgr">
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa-solid fa-pen-to-square"></i>
           <a href="#">Q1</a><br>
           <a href="#">Multiple Modules</a> | Not available yet
+          <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+          <i class="fa fa-check-circle float-end" aria-hidden="true" style="color: green;"></i>
         </li>
-        <li>
+        <li class="list-group-item bdgr">
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa-solid fa-pen-to-square"></i>
           <a href="#">Q2</a><br>
           <a href="#">Multiple Modules</a> | Not available yet
+          <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+          <i class="fa fa-check-circle float-end" aria-hidden="true" style="color: green;"></i>
         </li>
-        <li>
+        <li class="list-group-item bdgr">
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa-solid fa-pen-to-square"></i>
           <a href="#">Q3</a><br>
           <a href="#">Multiple Modules</a> | Not available yet
+          <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+          <i class="fa fa-check-circle float-end" aria-hidden="true" style="color: green;"></i>
         </li>
-        <li>
+        <li class="list-group-item bdgr">
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa-solid fa-pen-to-square"></i>
           <a href="#">Q4</a><br>
           <a href="#">Multiple Modules</a> | Not available yet
+          <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+          <i class="fa fa-check-circle float-end" aria-hidden="true" style="color: green;"></i>
         </li>
-        <li>
+        <li class="list-group-item bdgr">
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa-solid fa-pen-to-square"></i>
           <a href="#">Q5</a><br>
           <a href="#">Multiple Modules</a> | Not available yet
+          <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+          <i class="fa fa-check-circle float-end" aria-hidden="true" style="color: green;"></i>
         </li>
       </ul>
 
-      <h2>EXAMS 20% of Total <select>
-          <option selected value="Edit">
-            Edit</option>
-          <option value="Edit">
-            Speed Grader</option>
-          <option value="Duplicate">
-            Duplicate</option>
-          <option value="Delete">
-            Delete</option>
-          <option value="Move">
-            Move To...</option>
-          <option value="Send">
-            Send To...</option>
-          <option value="Copy">
-            Copy To...</option>
-          <option value="Share">
-            Share to Commons</option>
-        </select></h2>
-      <ul>
-        <li>
+
+      <ul class="list-group mb-3">
+        <li class="list-group-item-secondary">
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          EXAMS 20% of Total <select>
+            <option selected value="Edit">
+              Edit</option>
+            <option value="Edit">
+              Speed Grader</option>
+            <option value="Duplicate">
+              Duplicate</option>
+            <option value="Delete">
+              Delete</option>
+            <option value="Move">
+              Move To...</option>
+            <option value="Send">
+              Send To...</option>
+            <option value="Copy">
+              Copy To...</option>
+            <option value="Share">
+              Share to Commons</option>
+          </select>
+          <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+          <i class="fa fa-check-circle float-end" aria-hidden="true" style="color: green;"></i>
+        </li>
+        <li class="list-group-item bdgr">
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa-solid fa-pen-to-square"></i>
           <a href="#">Midterm</a><br>
           <a href="#">Multiple Modules</a> | Not available yet
+          <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+          <i class="fa fa-check-circle float-end" aria-hidden="true" style="color: green;"></i>
         </li>
-        <li>
+        <li class="list-group-item bdgr">
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa-solid fa-pen-to-square"></i>
           <a href="#">Final</a><br>
           <a href="#">Multiple Modules</a> | Not available yet
+          <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+          <i class="fa fa-check-circle float-end" aria-hidden="true" style="color: green;"></i>
         </li>
       </ul>
 
-      <h2>PROJECT 30% of Total <select>
-          <option selected value="Edit">
-            Edit</option>
-          <option value="Edit">
-            Speed Grader</option>
-          <option value="Duplicate">
-            Duplicate</option>
-          <option value="Delete">
-            Delete</option>
-          <option value="Move">
-            Move To...</option>
-          <option value="Send">
-            Send To...</option>
-          <option value="Copy">
-            Copy To...</option>
-          <option value="Share">
-            Share to Commons</option>
-        </select></h2>
-      <ul>
-        <li>
+
+      <ul class="list-group mb-3">
+        <li class="list-group-item-secondary">
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          PROJECT 30% of Total <select>
+            <option selected value="Edit">
+              Edit</option>
+            <option value="Edit">
+              Speed Grader</option>
+            <option value="Duplicate">
+              Duplicate</option>
+            <option value="Delete">
+              Delete</option>
+            <option value="Move">
+              Move To...</option>
+            <option value="Send">
+              Send To...</option>
+            <option value="Copy">
+              Copy To...</option>
+            <option value="Share">
+              Share to Commons</option>
+          </select>
+          <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+          <i class="fa fa-check-circle float-end" aria-hidden="true" style="color: green;"></i>
+        </li>
+        <li class="list-group-item bdgr">
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          <i class="fa-solid fa-pen-to-square"></i>
           <a href="#">Project</a><br>
           <a href="#">Multiple Modules</a> | Not available yet
+          <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+          <i class="fa fa-check-circle float-end" aria-hidden="true" style="color: green;"></i>
         </li>
       </ul>
     </td>
 
   </tr>
 </table>
+
+</html>

@@ -1,74 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- <base href = "/public/" /> -->
+  <link href="../../vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../style.css" rel="stylesheet" />
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.css" rel="stylesheet" />
+</head>
+
 <table>
   <tr>
-    <td valign="top">
+    <td valign="top" class="list-group navigation-bar">
       <ul>
-        <li>
-          <a href="#">Account</a>
+        <li class="list-group-item selected">
+          <i class="fa-regular fa-user cl-gray"></i>
+          <a href="../profile/index.html">Account</a>
         </li>
-        <li>
-          <a href="#">Dashbord</a>
+        <li class="list-group-item">
+          <i class="fa-solid fa-gauge"></i>
+          <a href="../dashbord.html">Dashbord</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-book"></i>
           <a href="../home.html">Courses</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-regular fa-calendar"></i>
           <a href="#">Calendar</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-inbox"></i>
           <a href="#">Inbox</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-regular fa-clock"></i>
           <a href="#">History</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-computer"></i>
           <a href="#">Studio</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
           <a href="#">Commons</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-question"></i>
           <a href="#">Help</a>
         </li>
       </ul>
     </td>
 
-    <td valign="top">
+    <td valign="top" class="list-group account-navigation">
       <ul>
-        <li>
+        <li class="list-group-item">
           <a href="#">Notifications</a>
         </li>
-        <li>
+        <li class="list-group-item selected">
           <a href="#">Profile</a>
         </li>
-        <li>
+        <li class="list-group-item">
           <a href="#">Files</a>
         </li>
-        <li>
+        <li class="list-group-item">
           <a href="#">Settings</a>
         </li>
-        <li>
+        <li class="list-group-item">
           <a href="#">ePortfolios</a>
         </li>
-        <li>
+        <li class="list-group-item">
           <a href="#">Shared Content</a>
         </li>
-        <li>
+        <li class="list-group-item">
           <a href="#">The Hub</a>
         </li>
-        <li>
+        <li class="list-group-item">
           <a href="#">Qwickly Course Tools</a>
         </li>
-        <li>
+        <li class="list-group-item">
           <a href="#">Global Announcement</a>
         </li>
       </ul>
     </td>
 
-    <td>
-      Zongyu Wu's Profile
-      <hr>
+    <td valign="top" class="detail">
 
-      <h2>Zongyu Wu<button onclick="location.href='edit.html';">Edit Profile</button></h2>
+      Zongyu Wu's Profile<br>
+      <hr><br>
+      <i class="fa fa-user fa-2xl" aria-hidden="true"></i><br>
+
+
+      <h2>Zongyu Wu
+        <button onclick="location.href='edit.html';" class="btn btn-secondary float-end">
+          <i class="fa-solid fa-pencil"></i>
+          Edit Profile
+        </button>
+      </h2>
 
       <h2>Contact</h2>
       No contact.
@@ -78,8 +105,11 @@
 
       <h2>Links</h2>
       <a href="https://www.linkedin.com/in/zongyuwu/">LinkedIn</a>
+      <a href="https://www.youtube.com/watch?v=YzZz16Gtfdc&feature=youtu.be">YouTube</a>
 
     </td>
 
   </tr>
 </table>
+
+</html>

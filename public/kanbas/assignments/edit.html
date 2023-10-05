@@ -1,199 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="../../vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../style.css" rel="stylesheet" />
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.css" rel="stylesheet" />
+</head>
+
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../home.html">CS5610 Fall 2023</a></li>
+    <li class="breadcrumb-item" aria-current="page"><a href="index.html">Assignments</a></li>
+    <li class="breadcrumb-item active" aria-current="page">A1 SETUP</li>
+  </ol>
+</nav>
+
+
+
 <table>
-  <tr>
-    <td valign="top">
+  <tr class="d-flex flex-row">
+    <td valign="top" class="list-group navigation-bar">
       <ul>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-regular fa-user cl-gray"></i>
           <a href="../profile/index.html">Account</a>
         </li>
-        <li>
-          <a href="#">Dashbord</a>
+        <li class="list-group-item">
+          <i class="fa-solid fa-gauge"></i>
+          <a href="../dashbord.html">Dashbord</a>
         </li>
-        <li>
+        <li class="list-group-item selected">
+          <i class="fa-solid fa-book"></i>
           <a href="../home.html">Courses</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-regular fa-calendar"></i>
           <a href="#">Calendar</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-inbox"></i>
           <a href="#">Inbox</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-regular fa-clock"></i>
           <a href="#">History</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-computer"></i>
           <a href="#">Studio</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
           <a href="#">Commons</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-question"></i>
           <a href="#">Help</a>
         </li>
       </ul>
     </td>
 
-    <td valign="top">
-      <li>
+
+    <td valign="top" class="list-group account-navigation">
+      <li class="list-group-item">
         <a href="../home.html">Home</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Modules</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Piazza</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Zoom Meetings</a>
       </li>
-      <li>
-        <a href="index.html">Assignments</a>
+      <li class="list-group-item selected">
+        <a href="#">Assignments</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Quizzes</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="../grades.html">Grade</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">People</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Panopto Video</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Discussions</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Announcements</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Pages</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Files</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Rubrics</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Outcomes</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Collaborations</a>
       </li>
-      <li>
+      <li class="list-group-item">
         <a href="#">Syllabus</a>
       </li>
-      <li>
-        <a href="course-detail.html">Settings</a>
+      <li class="list-group-item">
+        <a href="../course-detail.html">Settings</a>
       </li>
 
     </td>
 
-    <td valign="top">
-      <select>
+    <td valign="top" class="flex-grow-1">
+      <select class="form-control">
         <option selected>Speed Grader</option>
       </select>
       <hr>
       <h2>Assignment Name</h2>
-      <input type="text" placeholder="A1"><br />
+      <div>
+        <input type="text" placeholder="A1" class="form-control"><br />
+      </div>
+      <p><textarea class="form-control">This is the assignment description.</textarea></p>
 
-      <p><textarea>This is the assignment description.</textarea></p>
-
-      <p>
-        <label for="points">Points</label><br>
-        <input type="number" id="points" max="100" placeholder="100">
+      <p class="row">
+        <label for="points" class="col">Points</label><br>
+        <input type="number" id="points" max="100" placeholder="100" class="form-control col">
       </p>
 
-      <p>
-        <label for="assignment-group">Assignment Group</label><br>
-        <select id="assignment-group">
+      <p class="row">
+        <label for="assignment-group" class="col">Assignment Group</label><br>
+        <select id="assignment-group" class="form-control col">
           <option selected value="assignments">ASSIGNMENTS</option>
         </select>
       </p>
 
-      <p>
-        <label for="percentage">Display Grade as</label><br>
-        <select id="percentage">
+      <p class="row">
+        <label for="percentage" class="col">Display Grade as</label><br>
+        <select id="percentage" class="form-control col">
           <option selected value="percentage">Percentage</option>
         </select>
       </p>
 
-      <p>
-        <label for="submission-type">Submission Type</label><br>
-        <select id="submission-type">
-          <option selected>Online</option>
-        </select>
-      </p>
+      <div class="container">
+        <div class="row">
+          <div class="col">Submission Type</div>
+          <div class="col">
+            <select class="form-control">
+              <option selected>Online</option>
+            </select>
 
-      <p>
-        <label>Online Entry Options</label>
-        <br />
-        <input type="checkbox" value="COMEDY" name="check-genre" id="chkbox-comedy" />
-        <label for="chkbox-comedy">Text Entry</label> <br />
-        <input type="checkbox" value="DRAMA" name="check-genre" id="chkbox-drama" />
-        <label for="chkbox-drama">Website URL</label> <br />
-        <input type="checkbox" value="SCIFI" name="check-genre" id="chkbox-scifi" />
-        <label for="chkbox-scifi">Media Recordings</label> <br />
-        <input type="checkbox" value="FANTASY" name="check-genre" id="chkbox-fantasy" />
-        <label for="chkbox-fantasy">Student Annotation</label><br />
-        <input type="checkbox" value="file" name="check-genre" id="chkbox-file" />
-        <label for="chkbox-fantasy">File Uploads</label>
-      </p>
+            <div>
+              <b>Online Entry Options</b>
+              <br />
+              <input type="checkbox" value="COMEDY" name="check-genre" id="chkbox-comedy" />
+              <label for="chkbox-comedy">Text Entry</label>
 
-      <p>
-        <label for="submission-attempt">Submission Attemps</label><br>
-        <select id="submission-attempt">
+              <br />
+              <input type="checkbox" value="DRAMA" name="check-genre" id="chkbox-drama" />
+              <label for="chkbox-drama">Website URL</label>
+
+              <br />
+              <input type="checkbox" value="SCIFI" name="check-genre" id="chkbox-scifi" />
+              <label for="chkbox-scifi">Media Recordings</label>
+
+              <br />
+              <input type="checkbox" value="FANTASY" name="check-genre" id="chkbox-fantasy" />
+              <label for="chkbox-fantasy">Student Annotation</label>
+
+              <br />
+              <input type="checkbox" value="file" name="check-genre" id="chkbox-file" />
+              <label for="chkbox-fantasy">File Uploads</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="row">
+        <label for="submission-attempt" class="col">Submission Attemps</label><br>
+        <select id="submission-attempt" class="form-contro col">
           <option selected>Unlimited</option>
         </select>
       </p>
 
-      <p>
-        <label for="plagiarism">Plagiarism Review</label><br>
-        <select id="plagiarism">
+      <p class="row">
+        <label for="plagiarism" class="col">Plagiarism Review</label><br>
+        <select id="plagiarism" class="form-control col">
           <option selected>None</option>
         </select>
       </p>
 
-      <p>
-        <label>Group Assignment</label>
-        <br />
-        <input type="checkbox" value="group" name="check-genre" id="chkbox-group" />
-        <label for="chkbox-group">This is a group assignment</label> <br />
-      </p>
+      <div class="row">
+        <div class="col">Group Assignment</div>
+        <div class="col">
+          <input type="checkbox" value="group" name="check-genre" id="chkbox-group" />
+          <label for="chkbox-group">This is a group assignment</label> <br />
+        </div>
+      </div>
 
-      <p>
-        <label>Peer Reviews</label>
-        <br />
-        <input type="checkbox" value="peer" name="check-genre" id="chkbox-peer" />
-        <label for="chkbox-peer">Require Peer Reviews</label> <br />
-      </p>
+      <div class="row">
+        <div class="col">Peer Reviews</div>
+        <div class="col">
+          <input type="checkbox" value="peer" name="check-genre" id="chkbox-peer" />
+          <label for="chkbox-peer">Require Peer Reviews</label>
+        </div>
+      </div>
 
-      <p>
-        Assign<br>
-        Assign to<br>
-        <input type="text" placeholder="Everyone">
-      </p>
+      <div class="row">
+        <div class="col">Assign</div>
+        <div class="col">
+          Assign to
+          <input type="text" placeholder="Everyone" class="form-control">
+        </div>
+      </div>
 
-      <p>
-        Due<br>
-        <input type="date" value="2021-01-01">
-      </p>
+      <div class="row">
+        <div class="col">Due</div>
+        <div class="col"><input type="date" value="2021-01-01" class="form-control"></div>
+        
+      </div>
 
-      <p>
-        Available From<br>
-        <input type="date" value="2021-01-01">
-      </p>
+      <div class="row">
+        <div class="col">Available From</div>
+        <div class="col"><input type="date" value="2021-01-01" class="form-control"></div>
+      </div>
 
-      <p>
-        Untill<br>
-        <input type="date" value="2021-01-01">
-      </p>
+      <div class="row">
+        <div class="col">Untill</div>
+        <div class="col"><input type="date" value="2021-01-01" class="form-control"></div>
+      </div>
 
-      <button onclick="location.href='index.html';">Cancel</button>
-      <button onclick="location.href='index.html';">Save</button>
+      <button onclick="location.href='index.html';" class="btn btn-secondary">Cancel</button>
+      <button onclick="location.href='index.html';" class="btn btn-danger">Save</button>
 
     </td>
 
   </tr>
 </table>
+
+</html>
