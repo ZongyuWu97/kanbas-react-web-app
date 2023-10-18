@@ -1,0 +1,142 @@
+table {
+  width: 100%;
+}
+
+tr {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.table tr {
+  display: table-row;
+}
+
+a {
+  text-decoration: none;
+  color: red;
+}
+
+.navigation-bar {
+  background: #000;
+  width: 80px;
+  margin-right: 20px;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: start; */
+}
+
+.navigation-bar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation-bar li {
+  background-color: #000;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation-bar a {
+  color: white;
+  display: flex;
+  margin: 8px;
+  padding: 8px;
+  /* text-align: center; */
+  /* margin: auto; */
+}
+
+.navigation-bar i {
+  color: red;
+  /* background-color: #000; */
+  margin: 8px;
+}
+
+.navigation-bar .cl-gray {
+  color: gray;
+}
+
+.navigation-bar .cl-white {
+  color: white;
+}
+
+.navigation-bar .selected {
+  background-color: white;
+}
+
+.navigation-bar .selected a {
+  color: red;
+}
+
+.account-navigation {
+  /* margin-left: 20px; */
+  width: 190px;
+}
+
+.account-navigation ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.account-navigation li {
+  display: flex;
+}
+
+.account-navigation a {
+  color: red;
+  margin-bottom: 15px;
+}
+
+.account-navigation .selected a {
+  color: #000;
+  padding-left: 8px;
+}
+
+.account-navigation .list-group-item {
+  border-width: 0px;
+}
+
+.account-navigation .selected {
+  border-left-width: 5px;
+  border-color: #000;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card {
+  width: 260px;
+  margin: 30px;
+}
+
+@media (min-width: 1300px) {
+  .cards {
+    width: 1300px;
+  }
+}
+
+/* For screens smaller than 1300px */
+@media (max-width: 1299px) {
+  .cards {
+    width: 100%;
+  }
+}
+
+.bdgr {
+  border-left-width: 5px;
+  /* border: 100px; */
+  border-left-color: green;
+}
+
+.bdgr a {
+  color: #000;
+}
+

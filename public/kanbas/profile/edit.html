@@ -1,75 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- <base href = "/public/" /> -->
+  <link href="../../vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../style.css" rel="stylesheet" />
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.css" rel="stylesheet" />
+</head>
+
 <table>
   <tr>
-    <td valign="top">
+    <td valign="top" class="list-group navigation-bar">
       <ul>
-        <li>
-          <a href="#">Account</a>
+        <li class="list-group-item selected">
+          <i class="fa-regular fa-user cl-gray"></i>
+          <a href="../profile/index.html">Account</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-gauge"></i>
           <a href="#">Dashbord</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-book"></i>
           <a href="../home.html">Courses</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-regular fa-calendar"></i>
           <a href="#">Calendar</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-inbox"></i>
           <a href="#">Inbox</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-regular fa-clock"></i>
           <a href="#">History</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-computer"></i>
           <a href="#">Studio</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
           <a href="#">Commons</a>
         </li>
-        <li>
+        <li class="list-group-item">
+          <i class="fa-solid fa-question"></i>
           <a href="#">Help</a>
         </li>
       </ul>
     </td>
 
-    <td valign="top">
+    <td valign="top" class="list-group account-navigation">
       <ul>
-        <li>
+        <li class="list-group-item">
           <a href="#">Notifications</a>
         </li>
-        <li>
+        <li class="list-group-item selected">
           <a href="#">Profile</a>
         </li>
-        <li>
+        <li class="list-group-item">
           <a href="#">Files</a>
         </li>
-        <li>
+        <li class="list-group-item">
           <a href="#">Settings</a>
         </li>
-        <li>
+        <li class="list-group-item">
           <a href="#">ePortfolios</a>
         </li>
-        <li>
+        <li class="list-group-item">
           <a href="#">Shared Content</a>
         </li>
-        <li>
+        <li class="list-group-item">
           <a href="#">The Hub</a>
         </li>
-        <li>
+        <li class="list-group-item">
           <a href="#">Qwickly Course Tools</a>
         </li>
-        <li>
+        <li class="list-group-item">
           <a href="#">Global Announcement</a>
         </li>
       </ul>
     </td>
 
-    <td>
-      <h2>Zongyu Wu</h2>
+    <td class="detail">
+      Zongyu Wu's Profile<br>
+      <hr><br>
+      <i class="fa fa-user fa-2xl" aria-hidden="true"></i><br>
+
+      <h2>Zongyu Wu<button onclick="location.href='index.html';" class="btn btn-secondary float-end"><i
+            class="fa-solid fa-pencil"></i>Cancel Editing</button></h2>
+
+      <p class="mb-3">
+        <label for="name" class="form-label">Name:*</label><br>
+        <input type="text" id="name" placeholder="Zongyu Wu" class="form-control"><br>
+      </p>
+
       <p>
-        <label for="name">Name:*</label>
-        <input type="text" id="name" placeholder="Zongyu Wu">
-        <label for="pronouns">Pronouns: </label>
+        <label for="pronouns">Pronouns: </label><br>
         <select id="pronouns">
           <option selected>
             None
@@ -77,43 +105,48 @@
         </select>
       </p>
 
-      <p>
-        <label for="title">Title: </label>
-        <input type="text" id="title">
+      <p class="mb-3">
+        <label for="title" class="form-label">Title: </label><br>
+        <input type="text" id="title" class="form-control">
       </p>
 
       <h2>Contact</h2>
       None
 
       <h2>Biography</h2>
-      Student<br>
-      <textarea>New Biography</textarea>
+      <div class="mb-3">
+        <label for="bio" class="form-label">Student</label><br>
+        <textarea id="bio" class="form-control">New Biography</textarea>
+      </div>
 
       <h2>Links</h2>
-      <a href="https://www.linkedin.com/in/zongyuwu/">LinkedIn</a>
-      <p>
-      <table>
-        <tr>
-          <td valign="top">
-            <h2>Title</h2>
+      <div class="container">
+        <div valign="top" class="row">
+          <div class="col">Title</div>
+          <div class="col">URL</div>
+        </div>
+        <div valign="top" class="row">
+          <div class="col">
             <input type="text" placeholder="LinkedIn">-><br>
-            <button>Add another link</button><br>
-            <button>Cancel</button>
-            <button onclick="location.href='index.html';">Save Profile</button><br>
-            <button>Edit Profile</button>
-            <button onclick="location.href='index.html';">Cancel Editing</button>
-          </td>
-          <td valign="top">
-            <h2>URL</h2>
+          </div>
+          <div class="col">
             <input type="text" placeholder="https://www.linkedin.com/in/zongyuwu/">
             <a href="#">Remove</a>
-          </td>
-        </tr>
-      </table>
-      </p>
+          </div>
+        </div>
+      </div>
 
-
+      <div>
+        <button class="btn btn-secondary">Add another link</button><br>
+      </div>
+      <hr>
+      <div>
+        <button onclick="location.href='index.html';" class="btn btn-secondary">Cancel</button>
+        <button onclick="location.href='index.html';" class="btn btn-danger">Save Profile</button><br>
+      </div>
     </td>
 
   </tr>
 </table>
+
+</html>
