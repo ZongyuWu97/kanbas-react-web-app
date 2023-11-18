@@ -85,7 +85,7 @@ function WorkingWithObjects() {
       <label for="completed">Completed</label>
 
       <h4>Retrieving Objects</h4>
-      <a href={`${API_BASE}/a5/assignmen`}
+      <a href={`${API_BASE}/a5/assignment`}
         className="btn btn-primary me-2">
         Get Assignment
       </a>
