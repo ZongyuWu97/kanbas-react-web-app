@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import db from "../../Database";
 import "bootstrap/dist/css/bootstrap.min.css"
 import { BsPlusLg } from "react-icons/bs";
 import { useSelector, useDispatch } from "react-redux";
-import { selectAssignment, initialState, deleteAssignment } from "./assignmentsReducer";
+import {
+  setAssignments, addAssignment, deleteAssignment,
+  updateAssignment, selectAssignment, initialState
+} from "./assignmentsReducer";
 import ConfirmationDialog from './ConfirmationDialog'
+import * as service from "./service";
 
 
 
@@ -15,10 +19,16 @@ function Assignments() {
   const assignment = useSelector((state) => state.assignmentsReducer.assignment);
   const dispatch = useDispatch();
 
-  const courseAssignments = assignments.filter(
-    (assignment) => assignment.course === courseId);
+  // const courseAssignments = assignments.filter(
+  //   (assignment) => assignment.course === courseId);
 
-  const [showConfirmation, setShowConfirmation] = useState(new Array(courseAssignments.length).fill(false));
+  const [showConfirmation, setShowConfirmation] = useState(new Array(assignments.length).fill(false));
+
+  const handleDeleteAssignment = (assignmentId) => {
+    service.deleteAssignment(assignmentId).then((status) => {
+      dispatch(deleteAssignment(assignmentId));
+    });
+  };
 
   const handleDeleteClick = (index) => {
     const newConfirmationStates = [...showConfirmation];
@@ -27,14 +37,21 @@ function Assignments() {
   };
 
   const handleConfirmDelete = () => {
-    dispatch(deleteAssignment(assignment._id));
-    setShowConfirmation(new Array(courseAssignments.length).fill(false));
+    handleDeleteAssignment(assignment._id);
+    setShowConfirmation(new Array(assignments.length).fill(false));
   };
 
   const handleCancelDelete = () => {
     // Cancel the deletion and close the confirmation dialog
-    setShowConfirmation(new Array(courseAssignments.length).fill(false));
+    setShowConfirmation(new Array(assignments.length).fill(false));
   };
+
+  useEffect(() => {
+    service.findAssignmentsForCourse(courseId)
+      .then((assignments) =>
+        dispatch(setAssignments(assignments))
+      );
+  }, [courseId]);
 
   return (
     <div>
@@ -64,14 +81,14 @@ function Assignments() {
       <ul className="list-group" style={{ background: "#e2e3e5", marginTop: "30px" }}>
         <h2>Assignments for course {courseId}</h2>
         <div>
-          {courseAssignments.map((assignment, index) => (
+          {assignments.map((assignment, index) => (
             <div>
               <Link
                 key={assignment._id}
                 to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
                 className="list-group-item"
                 onClick={() => dispatch(selectAssignment(assignment))}>
-                {assignment.name}
+                {assignment.title}
                 <button onClick={(e) => {
                   e.preventDefault();
                   handleDeleteClick(index);

@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate, useParams, Link, useLocation } from "react-router-dom";
-import db from "../../Database";
 import { addAssignment, selectAssignment, updateAssignment } from "./assignmentsReducer";
 import { useSelector, useDispatch } from "react-redux";
+import * as service from "./service";
 
 
 function AssignmentEditor() {
@@ -14,13 +14,25 @@ function AssignmentEditor() {
   const { courseId } = useParams();
   const { pathname } = useLocation()
   const navigate = useNavigate();
+
+  const handleAddAssignment = () => {
+    service.createAssignment(courseId, assignment).then((assignment) => {
+      dispatch(addAssignment(assignment));
+    });
+  };
+
+  const handleUpdateAssignment = async () => {
+    const status = await service.updateAssignment(assignment);
+    dispatch(updateAssignment(assignment));
+  };
+
   const handleSave = () => {
     console.log("Actually saving assignment TBD in later assignments");
     // console.log(assignment)
     if (pathname.includes("New")) {
-      dispatch(addAssignment(assignment));
+      handleAddAssignment();
     } else {
-      dispatch(updateAssignment(assignment));
+      handleUpdateAssignment();
     }
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
@@ -34,8 +46,8 @@ function AssignmentEditor() {
       <input value={assignment._id}
         className="form-control mb-2" onChange={pathname.includes("New") ? (e) => dispatch(selectAssignment({ ...assignment, _id: e.target.value })) : () => { }} />
       Assignment Name
-      <input value={assignment.name}
-        className="form-control mb-2" onChange={(e) => dispatch(selectAssignment({ ...assignment, name: e.target.value }))} />
+      <input value={assignment.title}
+        className="form-control mb-2" onChange={(e) => dispatch(selectAssignment({ ...assignment, title: e.target.value }))} />
       <textarea value={assignment.description} className="form-control mb-2" onChange={(e) => dispatch(selectAssignment({ ...assignment, description: e.target.value }))} />
 
       <table>

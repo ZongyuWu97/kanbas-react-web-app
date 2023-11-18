@@ -1,7 +1,5 @@
-import React from "react";
-import { useParams, Routes, Route, Navigate, useLocation } from "react-router-dom";
-import JsonPre from "../../Labs/a3/JsonPre";
-import db from "../Database";
+import React, { useEffect, useState } from "react";
+import { useParams, Routes, Route, Navigate } from "react-router-dom";
 import CourseNavigation from "./CourseNavigation";
 import Modules from "./Modules";
 import Home from "./Home";
@@ -9,17 +7,27 @@ import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades/index";
 import { BreadCrumb } from "./BreadCrumb/index";
+import axios from "axios";
 
-function Courses({ courses }) {
+function Courses() {
+  const URL = "http://localhost:4000/api/courses";
   const { courseId } = useParams();
-  // const { pathname } = useLocation();
-  // const [empty, kanbas, courses, id, screen] = pathname.split("/");
-  const course = courses.find((course) => course._id === courseId);
+  const [course, setCourse] = useState({});
+  const findCourseById = async (courseId) => {
+    const response = await axios.get(
+      `${URL}/${courseId}`
+    );
+    setCourse(response.data);
+  };
+
+  useEffect(() => {
+    findCourseById(courseId);
+  }, [courseId]);
 
   return (
     <div className="d-flex flex-column">
       <div style={{ width: "100%" }}>
-        <BreadCrumb />
+        <BreadCrumb course={course} />
         <hr />
       </div>
 

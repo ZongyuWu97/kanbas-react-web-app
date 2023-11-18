@@ -4,13 +4,13 @@ import db from "../../Database";
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./index.css"
 
-export function BreadCrumb() {
+export function BreadCrumb({ course }) {
   const links = ["Home", "Modules", "Piazza", "Zoom Meetings", "Assignments", "Grades"];
   const { pathname } = useLocation();
   const { courseId } = useParams();
 
-  const course = db.courses.find((course) => course._id === courseId);
-
+  // const course = db.courses.find((course) => course._id === courseId);
+  // console.log(course.name)
 
   return (
     <nav aria-label="breadcrumb">
