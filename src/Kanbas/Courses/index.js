@@ -10,11 +10,11 @@ import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades/index";
 import { BreadCrumb } from "./BreadCrumb/index";
 
-function Courses() {
+function Courses({ courses }) {
   const { courseId } = useParams();
-  const { pathname } = useLocation();
-  const [empty, kanbas, courses, id, screen] = pathname.split("/");
-  const course = db.courses.find((course) => course._id === courseId);
+  // const { pathname } = useLocation();
+  // const [empty, kanbas, courses, id, screen] = pathname.split("/");
+  const course = courses.find((course) => course._id === courseId);
 
   return (
     <div className="d-flex flex-column">
@@ -42,6 +42,8 @@ function Courses() {
                 path="Assignments/:assignmentId"
                 element={<AssignmentEditor />}
               />
+              <Route path="Assignments/New"
+                element={<AssignmentEditor />} />
               <Route path="Grades" element={<Grades />} />
             </Routes>
           </div>

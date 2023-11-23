@@ -1,17 +1,33 @@
 import db from "../Database";
-import React from "react";
+import React, { useState } from "react";
 import './index.css'
 
 import { Link } from "react-router-dom";
-function Dashboard() {
-  const courses = db.courses;
+function Dashboard({ courses, course, setCourse, addNewCourse,
+  deleteCourse, updateCourse }
+) {
   return (
     <div>
       <h1>Dashboard</h1>
       <hr />
       <h2>Published Courses ({courses.length})</h2>
-      <div class="d-flex flex-row row row-cols-1 row-cols-md-3 g-4">
-        {courses.map((course, index) => (
+      <hr />
+      <h5>Course</h5>
+      <input value={course.name} className="form-control"
+        onChange={(e) => setCourse({ ...course, name: e.target.value })} />
+      <input value={course.number} className="form-control"
+        onChange={(e) => setCourse({ ...course, number: e.target.value })} />
+      <input value={course.startDate} className="form-control" type="date"
+        onChange={(e) => setCourse({ ...course, startDate: e.target.value })} />
+      <input value={course.endDate} className="form-control" type="date"
+        onChange={(e) => setCourse({ ...course, endDate: e.target.value })} />
+      <button className="btn btn-success" onClick={addNewCourse}>Add</button>
+      <button className="btn btn-primary" onClick={updateCourse} >
+        Update
+      </button>
+
+      <div class="d-flex flex-row row row-cols-1 row-cols-md-3 g-4 list-group">
+        {courses.map((course) => (
           <div className="col">
 
             <div class="card h-100">
@@ -22,8 +38,25 @@ function Dashboard() {
                 <Link
                   key={course._id}
                   to={`/Kanbas/Courses/${course._id}`}
-                  className="btn btn-primary"
+                  className="list-group-item"
                 >
+                  <button
+                    className="btn btn-warning"
+                    onClick={(event) => {
+                      event.preventDefault();
+                      setCourse(course);
+                    }}>
+                    Edit
+                  </button>
+
+                  <button
+                    className="btn btn-danger"
+                    onClick={(event) => {
+                      event.preventDefault();
+                      deleteCourse(course._id);
+                    }}>
+                    Delete
+                  </button>
                   {course.name}
                 </Link>
                 <p class="card-text">
