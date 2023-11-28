@@ -12,7 +12,7 @@ function Signup() {
       await client.signup(credentials);
       navigate("/project/account");
     } catch (err) {
-      setError(err.response.data.message);
+      setError(err.response);
     }
   };
   return (
