@@ -9,6 +9,7 @@ import { useState } from "react";
 import store from "./store";
 import { Provider } from "react-redux";
 import axios from 'axios';
+import Signin from "../project/users/signin";
 
 function Kanbas() {
   const [courses, setCourses] = useState([]);
@@ -43,7 +44,7 @@ function Kanbas() {
       `${URL}/${course._id}`,
       course
     );
-    console.log(response)
+    // console.log(response)
     setCourses(
       courses.map((c) => {
         if (c._id === course._id) {
@@ -68,6 +69,7 @@ function Kanbas() {
         <div>
           <Routes>
             <Route path="/" element={<Navigate to="Dashboard" />} />
+            {/* <Route path="/signin" element={<Signin />} /> */}
             <Route path="Account" element={<Account />} />
             <Route path="Dashboard" element={
               <Dashboard
