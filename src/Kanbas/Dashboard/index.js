@@ -27,24 +27,24 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
       </button>
 
       <div class="d-flex flex-row row row-cols-1 row-cols-md-3 g-4 list-group">
-        {courses.map((course) => (
+        {courses.map((c) => (
           <div className="col">
 
             <div class="card h-100">
               <img src="/images/marriott.png" class="card-img-top" alt="..." />
               <div class="card-body">
-                <h5 class="card-title">{course.name}</h5>
+                <h5 class="card-title">{c.name}</h5>
 
                 <Link
-                  key={course._id}
-                  to={`/Kanbas/Courses/${course._id}`}
+                  key={c._id}
+                  to={`/Kanbas/Courses/${c._id}`}
                   className="list-group-item"
                 >
                   <button
                     className="btn btn-warning"
                     onClick={(event) => {
                       event.preventDefault();
-                      setCourse(course);
+                      setCourse(c);
                     }}>
                     Edit
                   </button>
@@ -53,11 +53,11 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
                     className="btn btn-danger"
                     onClick={(event) => {
                       event.preventDefault();
-                      deleteCourse(course._id);
+                      deleteCourse(c._id);
                     }}>
                     Delete
                   </button>
-                  {course.name}
+                  {c.name}
                 </Link>
                 <p class="card-text">
                   This is a longer card with supporting text below as a natural
