@@ -27,7 +27,7 @@ function UserTable() {
     try {
       const status = await client.updateUser(user);
       setUsers(users.map((u) => (u._id === user._id ? user : u)));
-      setUser({ username: "", password: "", role: "USER" })
+      setUser({ username: "", password: "", role: "USER", firstName: "", lastName: "" })
     } catch (err) {
       console.log(err);
     }
